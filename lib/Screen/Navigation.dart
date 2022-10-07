@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:googlefirebaselogin/Screen/homepage.dart';
@@ -28,10 +29,10 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 children: [
                   SizedBox(height: 20,),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(width: 10,),
                       Container(
+                        padding: EdgeInsets.only(left: 40),
                         height: 100,
                         width:100,
                         decoration: BoxDecoration(
@@ -40,43 +41,150 @@ class _DrawerScreenState extends State<DrawerScreen> {
                           color: Colors.white,
                         ),
                         child:CircleAvatar(
-                          // backgroundImage:NetworkImage(FirebaseAuth.instance.currentUser!.photoURL.toString()),
+                           backgroundImage:NetworkImage(FirebaseAuth.instance.currentUser!.photoURL.toString()),
                         ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 20),
+                        height: 60,
+                        width:60,
+                       child: Icon(Icons.info_outlined),
                       ),
                     ],
                   ),
-                  ListTile(
-                    title: Text("Profile",
+                  Container(
+                    padding: EdgeInsets.only(left: 40),
+                    child: Row(
+                      children: [
+                        Text("RMVA",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
 
+                        ),
+                      ],
                     ),
-                    trailing: Icon(Icons.person,color:Colors.black,),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(left: 40),
+                    child: Row(
+                      children: [
+                        Text("@RMVA",style: TextStyle(fontSize: 18,fontWeight: FontWeight.normal),
+
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(left: 40),
+                    child: Row(
+                      children: [
+                        Text("200followers"),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text("200following"),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 40),
+                    height: 1,
+                    color: Colors.black,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+
+                  ListTile(
+                    //leading:  Icon(Icons.person_pin,color:Colors.black12,size: 40,),
+                    //trailing: Text("Twitter Circle",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                    title: Row(
+                      children: [
+                        Icon(Icons.person,color:Colors.black12,size: 40,),
+                        SizedBox(width: 16,),
+                        Text("Profile",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+
+                  ListTile(
+                    //leading:  Icon(Icons.person_pin,color:Colors.black12,size: 40,),
+                    //trailing: Text("Twitter Circle",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                    title: Row(
+                      children: [
+                        Icon(Icons.topic,color:Colors.black12,size: 40,),
+                        SizedBox(width: 16,),
+                        Text("Topics",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  SizedBox(
+                    height: 20,
+                  ),
+
+                  ListTile(
+                    //leading:  Icon(Icons.person_pin,color:Colors.black12,size: 40,),
+                    //trailing: Text("Twitter Circle",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                    title: Row(
+                      children: [
+                        Icon(Icons.bookmark,color:Colors.black12,size: 40,),
+                        SizedBox(width: 16,),
+                        Text("BookMarks",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+
+                  ListTile(
+                    //leading:  Icon(Icons.person_pin,color:Colors.black12,size: 40,),
+                    //trailing: Text("Twitter Circle",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                    title: Row(
+                      children: [
+                        Icon(Icons.list_alt,color:Colors.black12,size: 40,),
+                        SizedBox(width: 16,),
+                        Text("List",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
                   ),
                   ListTile(
-                    title: Text("Topics",
-
+                    //leading:  Icon(Icons.person_pin,color:Colors.black12,size: 40,),
+                    //trailing: Text("Twitter Circle",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+title: Row(
+  children: [
+    Icon(Icons.person_pin,color:Colors.black12,size: 40,),
+                    SizedBox(width: 16,),
+                    Text("Twitter Circle",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
                     ),
-                    trailing: Icon(Icons.topic,color:Colors.black,),
+  ],
+                    ),
                   ),
-                  Divider(),
-                  ListTile(
-                    leading: Text("Bookmarks",
-
-                    ),
-                    trailing: Icon(Icons.bookmark,color:Colors.black,),
+                  SizedBox(
+                    height: 20,
                   ),
-                  Divider(),
-                  ListTile(
-                    leading: Text("List",
-
-                    ),
-                    trailing: Icon(Icons.list_alt_outlined,color:Colors.black,),
-                  ),
-                  Divider(),
-                  ListTile(
-                    leading: Text("Twitter Circle",
-
-                    ),
-                    trailing: Icon(Icons.person_remove_alt_1_sharp,color:Colors.black,),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 40),
+                    height: 1,
+                    color: Colors.black,
                   ),
                  /* Divider(),
                   ListTile(

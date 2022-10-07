@@ -120,7 +120,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
                   ],
                 ),),
               Container(
-                width: 100,
+                width: 50,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
